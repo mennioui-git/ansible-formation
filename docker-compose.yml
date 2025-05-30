@@ -1,0 +1,22 @@
+---
+services:
+  machine_01:
+    build: .
+    container_name: machine_01
+    ports:
+      - "2221:22"
+      - "8081:80"
+
+  machine_02:
+    build: .
+    container_name: machine_02
+    ports:
+      - "2222:22"
+      - "8082:80"
+
+  machine_03:
+    build: .
+    container_name: machine_03
+    ports:
+      - "2223:22"
+      - "8083:80"
