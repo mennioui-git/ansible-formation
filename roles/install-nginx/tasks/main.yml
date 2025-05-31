@@ -1,0 +1,35 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/install-nginx
+- name: Mettre à jour le cache apt
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Installer Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Démarrer Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Copier une page web pour la machine 01
+  copy:
+    content: "<h1>Bienvenue sur mon serveur Ansible ! (Machine 01)</h1>"
+    dest: /var/www/html/index.html
+  when: inventory_hostname == "machine_01"
+
+- name: Copier une page web pour la machine 02
+  copy:
+    content: "<h1>Bienvenue sur mon serveur Ansible ! (Machine 02)</h1>"
+    dest: /var/www/html/index.html
+  when: inventory_hostname == "machine_02"
+
+- name: Copier une page web pour la machine 03
+  copy:
+    content: "<h1>Bienvenue sur mon serveur Ansible ! (Machine 03)</h1>"
+    dest: /var/www/html/index.html
+  when: inventory_hostname == "machine_03"

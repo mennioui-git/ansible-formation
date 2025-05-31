@@ -1,9 +1,9 @@
 ---
 all:
   hosts:
-    node_01:
+    machine_01:
       ansible_host: 127.0.0.1
-      ansible_port: 2222
+      ansible_port: 2221
       ansible_user: ansible
       ansible_password: ansible
       ansible_connection: ssh
@@ -11,15 +11,15 @@ all:
 
 web:
   hosts:
-    node_02:
+    machine_02:
       ansible_host: 127.0.0.1
-      ansible_port: 2223
+      ansible_port: 2222
       ansible_user: ansible
       ansible_password: ansible
       ansible_connection: ssh
       ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 
-    node_03:
+    machine_03:
       ansible_host: 127.0.0.1
       ansible_port: 2223
       ansible_user: ansible
