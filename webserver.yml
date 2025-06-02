@@ -2,5 +2,7 @@
 - name: Configurer un serveur web Nginx dans un conteneur
   hosts: all
   become: yes
+  vars_files:
+    - myvars.yml
   roles:
     - install-nginx

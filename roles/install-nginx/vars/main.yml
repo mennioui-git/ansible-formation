@@ -1,3 +1,4 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # vars file for roles/install-nginx
+html_content: "<h1>Bienvenue sur mon serveur Ansible ! depuis le main.yml de vars"

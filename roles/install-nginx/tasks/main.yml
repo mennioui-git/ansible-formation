@@ -16,20 +16,7 @@
     state: started
     enabled: yes
 
-- name: Copier une page web pour la machine 01
+- name: Copier une page web pour les 3 machines
   copy:
-    content: "<h1>Bienvenue sur mon serveur Ansible ! (Machine 01)</h1>"
+    content: "{{ html_content }}"
     dest: /var/www/html/index.html
-  when: inventory_hostname == "machine_01"
-
-- name: Copier une page web pour la machine 02
-  copy:
-    content: "<h1>Bienvenue sur mon serveur Ansible ! (Machine 02)</h1>"
-    dest: /var/www/html/index.html
-  when: inventory_hostname == "machine_02"
-
-- name: Copier une page web pour la machine 03
-  copy:
-    content: "<h1>Bienvenue sur mon serveur Ansible ! (Machine 03)</h1>"
-    dest: /var/www/html/index.html
-  when: inventory_hostname == "machine_03"

@@ -8,6 +8,7 @@ all:
       ansible_password: ansible
       ansible_connection: ssh
       ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+      html_content: '<h1>Bienvenue sur mon serveur Ansible ! (Machine 01) depuis fichier inventaire</h1>'
 
 web:
   hosts:
@@ -18,6 +19,7 @@ web:
       ansible_password: ansible
       ansible_connection: ssh
       ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+      html_content: '<h1>Bienvenue sur mon serveur Ansible ! (Machine 02) depuis fichier inventaire</h1>'
 
     machine_03:
       ansible_host: 127.0.0.1
@@ -26,3 +28,4 @@ web:
       ansible_password: ansible
       ansible_connection: ssh
       ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+      html_content: '<h1>Bienvenue sur mon serveur Ansible ! (Machine 03) depuis fichier inventaire</h1>'

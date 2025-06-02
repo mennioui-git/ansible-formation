@@ -19,7 +19,7 @@ RUN sed -i 's/^#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ss
     sed -i 's/^#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config
 
 # Expose port SSH
-EXPOSE 22
+EXPOSE 22 80
 
 # Lancement du service SSH
 CMD ["/usr/sbin/sshd", "-D"]
